@@ -42,19 +42,19 @@ const isValidFields = () => {
 const clearFields = () => {
     const fields = document.querySelectorAll('.modal-field')
     fields.forEach(field => field.value = "")
-    document.getElementById('nome').dataset.index = 'new'
-    document.querySelector(".modal-header>h2").textContent  = 'Novo Cliente'
+    document.getElementById('titulo').dataset.index = 'new'
+    document.querySelector(".modal-header>h2").textContent  = 'Novo Livro'
 }
 
 const saveClient = () => {
     if (isValidFields()) {
         const client = {
-            nome: document.getElementById('nome').value,
-            email: document.getElementById('email').value,
-            celular: document.getElementById('celular').value,
-            cidade: document.getElementById('cidade').value
+            nome: document.getElementById('titulo').value,
+            email: document.getElementById('autor').value,
+            celular: document.getElementById('paginas').value,
+            cidade: document.getElementById('editora').value
         }
-        const index = document.getElementById('nome').dataset.index
+        const index = document.getElementById('titulo').dataset.index
         if (index == 'new') {
             createClient(client)
             updateTable()
@@ -94,11 +94,11 @@ const updateTable = () => {
 }
 
 const fillFields = (client) => {
-    document.getElementById('nome').value = client.nome
-    document.getElementById('email').value = client.email
-    document.getElementById('celular').value = client.celular
-    document.getElementById('cidade').value = client.cidade
-    document.getElementById('nome').dataset.index = client.index
+    document.getElementById('titulo').value = client.nome
+    document.getElementById('autor').value = client.email
+    document.getElementById('paginas').value = client.celular
+    document.getElementById('editora').value = client.cidade
+    document.getElementById('titulo').dataset.index = client.index
 }
 
 const editClient = (index) => {
